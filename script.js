@@ -2,17 +2,17 @@ const form = document.getElementById('form');
 const readBookList = document.querySelector('.readBook ul');
 const readedBookList = document.querySelector('.readedBook ul');
 
-// Load data from local storage if available
+
 const unreadBooks = JSON.parse(localStorage.getItem('unreadBooks')) || [];
 const readBooks = JSON.parse(localStorage.getItem('readBooks')) || [];
 
-// Function to save data to local storage
+
 function saveDataToLocalStorage() {
     localStorage.setItem('unreadBooks', JSON.stringify(unreadBooks));
     localStorage.setItem('readBooks', JSON.stringify(readBooks));
 }
 
-// Function to display books in the appropriate list
+
 function displayBooks() {
     readBookList.innerHTML = '';
     readedBookList.innerHTML = '';
@@ -36,13 +36,12 @@ function displayBooks() {
         `;
         readBookList.appendChild(li);
 
-        // Add a click event listener to the "Done" button
+   
         const doneButton = li.querySelector('.done-button');
         doneButton.addEventListener('click', function () {
             moveBookToReaded(index);
         });
 
-        // Add a click event listener to the "Delete" button
         const deleteButton = li.querySelector('.delete-button');
         deleteButton.addEventListener('click', function () {
             deleteBook(index, 'unread');
@@ -67,7 +66,7 @@ function displayBooks() {
         `;
         readedBookList.appendChild(li);
 
-        // Add a click event listener to the "Delete" button in the "readed" list
+
         const deleteButton = li.querySelector('.delete-button');
         deleteButton.addEventListener('click', function () {
             deleteBook(index, 'readed');
@@ -75,7 +74,7 @@ function displayBooks() {
     });
 }
 
-// Function to move a book from "unread" to "readed"
+
 function moveBookToReaded(index) {
     const bookToMove = unreadBooks[index];
     unreadBooks.splice(index, 1);
