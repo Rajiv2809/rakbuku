@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Penyimpanan Buku</title>
+</head>
+<body>
+    <form id="form" class="form">
+
+        <label for="">Nama buku</label>
+        <input type="text" required id="nama">
+        <label for="Da">Date</label>
+        <input type="date" required id="date"> 
+        <label for="das">Halaman</label>
+        <input  id="halaman" type="number">
+
+        <button class="submitButton" id="submit " value="submit" type="submit">Kirim</button>
+    </form>
+    
+
+    <div class="book">
+
+        <div class="readBook">
+            <h1>List book</h1>
+            <ul>
+                
+            </ul>
+        </div>
+        <div class="readedBook">
+            <h1>Readed Book</h1>
+            <ul>
+                
+            </ul>
+        </div>
+    </div>
+      
+    <script src="script.js"></script>
+</body>
+</html>
